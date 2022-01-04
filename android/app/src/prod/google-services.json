@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "612385928090",
+    "firebase_url": "https://superninja.firebaseio.com",
+    "project_id": "superninja",
+    "storage_bucket": "superninja.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612385928090:android:0e5e90481939a12760c023",
+        "android_client_info": {
+          "package_name": "id.co.superindo.superagent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612385928090-ksg5kmf0l2p8d8qv7iua1qm42qk4c4r5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.co.superindo.superagent",
+            "certificate_hash": "1dbfe4b68a5633564289001637346d0b2f3f274f"
+          }
+        },
+        {
+          "client_id": "612385928090-k79o3s2okgfe5ts356k32fdpsvghkgkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5vC7r230O232ekU877EuWUFtpVh4csPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612385928090-k79o3s2okgfe5ts356k32fdpsvghkgkk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "612385928090-6p08ahjuqphk2c863m8bfon47gaqjs6a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "id.co.superindo.superninja"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612385928090:android:791cc1843704563560c023",
+        "android_client_info": {
+          "package_name": "id.co.superindo.superninja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612385928090-f8h7tks4t4cobjdnbcgdfs03rlk6dhmh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.co.superindo.superninja",
+            "certificate_hash": "1dbfe4b68a5633564289001637346d0b2f3f274f"
+          }
+        },
+        {
+          "client_id": "612385928090-k79o3s2okgfe5ts356k32fdpsvghkgkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5vC7r230O232ekU877EuWUFtpVh4csPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612385928090-k79o3s2okgfe5ts356k32fdpsvghkgkk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "612385928090-6p08ahjuqphk2c863m8bfon47gaqjs6a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "id.co.superindo.superninja"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612385928090:android:80d8a1b5813b59a360c023",
+        "android_client_info": {
+          "package_name": "id.co.superindo.superninja.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612385928090-h4pen3a1g8c1hqd8b1ig5p0735eme8ff.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.co.superindo.superninja.dev",
+            "certificate_hash": "1dbfe4b68a5633564289001637346d0b2f3f274f"
+          }
+        },
+        {
+          "client_id": "612385928090-k79o3s2okgfe5ts356k32fdpsvghkgkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5vC7r230O232ekU877EuWUFtpVh4csPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612385928090-k79o3s2okgfe5ts356k32fdpsvghkgkk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "612385928090-6p08ahjuqphk2c863m8bfon47gaqjs6a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "id.co.superindo.superninja"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

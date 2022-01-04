@@ -1,0 +1,23 @@
+{
+    "configurations": [{
+            "name": "Prod",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--flavor", "prod"
+            ]
+        },
+        {
+            "name": "Dev",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "args": [
+                "--flavor", "dev"
+            ]
+        }
+    ],
+    "dart.flutterSdkPath": "pathToFlutterSDK",
+    "dart.sdkPath": "pathToFlutterSDKDartBin",
+}

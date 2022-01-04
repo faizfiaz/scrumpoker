@@ -1,0 +1,183 @@
+{
+  "project_info": {
+    "project_number": "612385928090",
+    "firebase_url": "https://superninja.firebaseio.com",
+    "project_id": "superninja",
+    "storage_bucket": "superninja.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612385928090:android:0e5e90481939a12760c023",
+        "android_client_info": {
+          "package_name": "id.co.superindo.superagent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612385928090-5n5qilaovlp03ifjccliftd46s6m899o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.co.superindo.superagent",
+            "certificate_hash": "91c0c74c0b65c7d258436860935d086e5df9a254"
+          }
+        },
+        {
+          "client_id": "612385928090-gnfrkbm7r91pojspkdles8d3ljv7brhp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.co.superindo.superagent",
+            "certificate_hash": "f9690830337bec1b71e4f22116f82c717b3b17ba"
+          }
+        },
+        {
+          "client_id": "612385928090-ksg5kmf0l2p8d8qv7iua1qm42qk4c4r5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.co.superindo.superagent",
+            "certificate_hash": "1dbfe4b68a5633564289001637346d0b2f3f274f"
+          }
+        },
+        {
+          "client_id": "612385928090-k79o3s2okgfe5ts356k32fdpsvghkgkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5vC7r230O232ekU877EuWUFtpVh4csPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612385928090-k79o3s2okgfe5ts356k32fdpsvghkgkk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "612385928090-6p08ahjuqphk2c863m8bfon47gaqjs6a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "id.co.superindo.superninja"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612385928090:android:791cc1843704563560c023",
+        "android_client_info": {
+          "package_name": "id.co.superindo.superninja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612385928090-2qojid0q9r82987i37mep22he69ctrpv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.co.superindo.superninja",
+            "certificate_hash": "189ed63fa337e5932bc1c82edf470abd54dcc88a"
+          }
+        },
+        {
+          "client_id": "612385928090-3ml9gnhf00ipq055uuqm5pt7vr1etj2h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.co.superindo.superninja",
+            "certificate_hash": "a8b35fb4334fae3a765bb6918ceefc760207f32d"
+          }
+        },
+        {
+          "client_id": "612385928090-f8h7tks4t4cobjdnbcgdfs03rlk6dhmh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.co.superindo.superninja",
+            "certificate_hash": "1dbfe4b68a5633564289001637346d0b2f3f274f"
+          }
+        },
+        {
+          "client_id": "612385928090-out6399ttr3se67ja9aj8048f4ji32oj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.co.superindo.superninja",
+            "certificate_hash": "f9690830337bec1b71e4f22116f82c717b3b17ba"
+          }
+        },
+        {
+          "client_id": "612385928090-k79o3s2okgfe5ts356k32fdpsvghkgkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5vC7r230O232ekU877EuWUFtpVh4csPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612385928090-k79o3s2okgfe5ts356k32fdpsvghkgkk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "612385928090-6p08ahjuqphk2c863m8bfon47gaqjs6a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "id.co.superindo.superninja"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612385928090:android:acae026df0c68e8660c023",
+        "android_client_info": {
+          "package_name": "id.co.superindo.superninja.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612385928090-l84597pb4qek48c23i38mf8oj7g97k41.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.co.superindo.superninja.dev",
+            "certificate_hash": "f9690830337bec1b71e4f22116f82c717b3b17ba"
+          }
+        },
+        {
+          "client_id": "612385928090-k79o3s2okgfe5ts356k32fdpsvghkgkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5vC7r230O232ekU877EuWUFtpVh4csPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612385928090-k79o3s2okgfe5ts356k32fdpsvghkgkk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "612385928090-6p08ahjuqphk2c863m8bfon47gaqjs6a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "id.co.superindo.superninja"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
