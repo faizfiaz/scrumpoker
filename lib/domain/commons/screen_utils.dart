@@ -1,15 +1,10 @@
-import 'package:SuperNinja/constant/color.dart';
-import 'package:SuperNinja/domain/commons/nav_key.dart';
-import 'package:SuperNinja/domain/models/entity/product.dart';
-import 'package:SuperNinja/domain/models/error/error_message.dart';
-import 'package:SuperNinja/domain/usecases/user/user_usecase.dart';
-import 'package:SuperNinja/ui/pages/login/login_screen.dart';
-import 'package:SuperNinja/ui/pages/shopRoutine/shop_routine_view_model.dart';
-import 'package:SuperNinja/ui/widgets/multilanguage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:scrumpoker/constant/color.dart';
+import 'package:scrumpoker/domain/models/error/error_message.dart';
+import 'package:scrumpoker/ui/widgets/multilanguage.dart';
 
 // ignore: avoid_classes_with_only_static_members
 class ScreenUtils {
@@ -107,113 +102,6 @@ class ScreenUtils {
         )
       ],
     ).show();
-  }
-
-  static void showExpiredMessage(BuildContext context) {
-    Alert(
-      context: context,
-      type: AlertType.error,
-      title: txt("login_expired"),
-      desc: txt("login_again"),
-      buttons: [
-        DialogButton(
-          color: primary,
-          onPressed: () => UserUsecase.empty().logout().then((value) =>
-              Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
-                  (r) => false)),
-          width: 120,
-          child: const Text(
-            "OK",
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-        )
-      ],
-    ).show();
-  }
-
-  // ignore: type_annotate_public_apis
-  static Future<bool> showAlertRemoveShopRoutine(BuildContext context,
-      ShopRoutineViewModel viewModel, Product product) async {
-    var shouldUpdate = false;
-    await Alert(
-        context: context,
-        type: AlertType.info,
-        title: "",
-        desc: txt("info_delete_shop_routine"),
-        buttons: [
-          DialogButton(
-            width: 120,
-            color: primary,
-            onPressed: () => {
-              viewModel.doRoutineShop(product),
-              Navigator.pop(context),
-              shouldUpdate = true,
-              Future.value(shouldUpdate)
-            },
-            child: const Text(
-              "OK",
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
-          ),
-          DialogButton(
-            color: primary,
-            onPressed: () => {Navigator.pop(context), shouldUpdate = true},
-            width: 120,
-            child: Text(
-              txt("cancel"),
-              style: const TextStyle(color: Colors.white, fontSize: 20),
-            ),
-          )
-        ]).show();
-    return Future.value(shouldUpdate);
-  }
-
-  static void showAlertClearCartShopRoutine(
-      BuildContext context, Function(bool isClear) callback) {
-    Alert(
-        context: context,
-        type: AlertType.info,
-        title: "",
-        desc: txt("info_clear_cart"),
-        buttons: [
-          DialogButton(
-            color: primary,
-            onPressed: () => {
-              Navigator.pop(context),
-            },
-            width: 120,
-            child: Text(
-              txt("cancel"),
-              style: const TextStyle(color: Colors.white, fontSize: 20),
-            ),
-          ),
-          DialogButton(
-            color: primary,
-            onPressed: () {
-              callback(false);
-              Navigator.pop(context);
-            },
-            width: 120,
-            child: Text(
-              txt("no"),
-              style: const TextStyle(color: Colors.white, fontSize: 20),
-            ),
-          ),
-          DialogButton(
-            color: primary,
-            onPressed: () {
-              callback(true);
-              Navigator.pop(context);
-            },
-            width: 120,
-            child: Text(
-              txt("yes"),
-              style: const TextStyle(color: Colors.white, fontSize: 20),
-            ),
-          )
-        ]).show();
   }
 
   static void showOptionImagePicker(
@@ -317,16 +205,6 @@ class ScreenUtils {
         backgroundColor: Colors.grey,
         textColor: Colors.white,
         fontSize: 16);
-  }
-
-  static void expiredToken() {
-    if (!NavKey.isInLogin) {
-      showToastMessage(txt("expired_token"));
-      UserUsecase.empty().logout().then((value) {
-        NavKey.isInLogin = true;
-        NavKey.navKey.currentState!.pushNamed('/login');
-      });
-    }
   }
 
   static void copyToClipBoard(String? text) {

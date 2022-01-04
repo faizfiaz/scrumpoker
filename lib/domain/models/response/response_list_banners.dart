@@ -1,4 +1,4 @@
-import 'package:SuperNinja/domain/models/entity/banners.dart';
+import 'package:scrumpoker/domain/models/entity/banners.dart';
 
 class ResponseListBanners {
   List<Banners>? data;

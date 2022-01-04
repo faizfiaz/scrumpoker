@@ -1,4 +1,4 @@
-import 'package:SuperNinja/domain/models/entity/product_detail.dart';
+import 'package:scrumpoker/domain/models/entity/product_detail.dart';
 
 class ResponseDetailProduct {
   ProductDetail? data;

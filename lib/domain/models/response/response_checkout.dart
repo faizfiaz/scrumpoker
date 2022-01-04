@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:SuperNinja/domain/models/entity/user_cl.dart';
+import 'package:scrumpoker/domain/models/entity/user_cl.dart';
 
 class ResponseCheckout {
   Checkout? data;

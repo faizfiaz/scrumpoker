@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:SuperNinja/data/remote/endpoints/endpoints.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:scrumpoker/data/remote/endpoints/endpoints.dart';
 
 class UserEndpoint {
   UserEndpoint._();

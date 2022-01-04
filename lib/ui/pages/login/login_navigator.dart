@@ -1,4 +1,4 @@
-import 'package:SuperNinja/domain/commons/base_navigator.dart';
+import 'package:scrumpoker/domain/commons/base_navigator.dart';
 
 abstract class LoginNavigator extends BaseNavigator {
   void showMainPage();

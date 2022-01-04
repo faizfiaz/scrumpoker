@@ -1,28 +1,24 @@
-import 'package:SuperNinja/constant/color.dart';
-import 'package:SuperNinja/constant/images.dart';
-import 'package:SuperNinja/domain/commons/screen_utils.dart';
-import 'package:SuperNinja/domain/commons/tracking_utils.dart';
-import 'package:SuperNinja/domain/usecases/user/user_usecase.dart';
-import 'package:SuperNinja/ui/pages/home/home_screen.dart';
-import 'package:SuperNinja/ui/widgets/custom_introduction.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart' as lib;
-import 'package:smartech_flutter_plugin/smartech_plugin.dart';
+import 'package:scrumpoker/constant/color.dart';
+import 'package:scrumpoker/constant/images.dart';
+import 'package:scrumpoker/domain/commons/screen_utils.dart';
+import 'package:scrumpoker/ui/widgets/custom_introduction.dart';
 
 class IntroScreen extends StatelessWidget {
   Future<void> _onIntroEnd(context) async {
-    final usecase = UserUsecase.empty();
-    final alreadyLogin = await usecase.hasToken();
-    await usecase.setAlreadySeenIntro();
-    await Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(
-            builder: (context) => HomeScreen(
-                  0,
-                  alreadyLogin: alreadyLogin,
-                )),
-        (r) => false);
+    // final usecase = UserUsecase.empty();
+    // final alreadyLogin = await usecase.hasToken();
+    // await usecase.setAlreadySeenIntro();
+    // await Navigator.pushAndRemoveUntil(
+    //     context,
+    //     MaterialPageRoute(
+    //         builder: (context) => HomeScreen(
+    //               0,
+    //               alreadyLogin: alreadyLogin,
+    //             )),
+    //     (r) => false);
   }
 
   @override
@@ -30,7 +26,6 @@ class IntroScreen extends StatelessWidget {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: SystemUiOverlay.values);
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
-    trackingEvent(0);
     const pageDecoration = lib.PageDecoration(
       titlePadding: EdgeInsets.zero,
       titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -89,7 +84,7 @@ class IntroScreen extends StatelessWidget {
       ],
       onDone: () => _onIntroEnd(context),
       skipFlex: 0,
-      onChange: (index) => {trackingEvent(index)},
+      onChange: (index) => {},
       nextFlex: 0,
       skip: const Text('Lewati', style: TextStyle(color: Colors.grey)),
       next: const Icon(
@@ -110,19 +105,5 @@ class IntroScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void trackingEvent(int index) {
-    var eventName = "";
-    if (index == 0) {
-      eventName = TrackingUtils.ONBOARDING_1;
-    } else if (index == 1) {
-      eventName = TrackingUtils.ONBOARDING_2;
-    } else if (index == 2) {
-      eventName = TrackingUtils.ONBOARDING_3;
-    } else if (index == 3) {
-      eventName = TrackingUtils.ONBOARDING_4;
-    }
-    SmartechPlugin().trackEvent(eventName, TrackingUtils.getEmptyPayload());
   }
 }

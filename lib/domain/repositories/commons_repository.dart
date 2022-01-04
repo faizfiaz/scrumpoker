@@ -1,15 +1,15 @@
 import 'dart:convert';
 
-import 'package:SuperNinja/data/remote/dio_client.dart';
-import 'package:SuperNinja/data/remote/endpoints/commons_endpoints.dart';
-import 'package:SuperNinja/data/remote/endpoints/endpoints.dart';
-import 'package:SuperNinja/domain/models/entity/xendit_bank.dart';
-import 'package:SuperNinja/domain/models/response/response_list_city.dart';
-import 'package:SuperNinja/domain/models/response/response_list_community_leader.dart';
-import 'package:SuperNinja/domain/models/response/response_list_province.dart';
-import 'package:SuperNinja/domain/models/response/response_list_store.dart';
-import 'package:SuperNinja/domain/repositories/base_repository.dart';
 import 'package:encrypt/encrypt.dart' as enc;
+import 'package:scrumpoker/data/remote/dio_client.dart';
+import 'package:scrumpoker/data/remote/endpoints/commons_endpoints.dart';
+import 'package:scrumpoker/data/remote/endpoints/endpoints.dart';
+import 'package:scrumpoker/domain/models/entity/xendit_bank.dart';
+import 'package:scrumpoker/domain/models/response/response_list_city.dart';
+import 'package:scrumpoker/domain/models/response/response_list_community_leader.dart';
+import 'package:scrumpoker/domain/models/response/response_list_province.dart';
+import 'package:scrumpoker/domain/models/response/response_list_store.dart';
+import 'package:scrumpoker/domain/repositories/base_repository.dart';
 
 class CommonsRepository extends BaseRepository {
   CommonsRepository(DioClient? dioClient) : super(dioClient);

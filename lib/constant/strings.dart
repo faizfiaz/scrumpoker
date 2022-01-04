@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-import 'package:SuperNinja/ui/widgets/multilanguage.dart';
+import 'package:scrumpoker/ui/widgets/multilanguage.dart';
 
 class Strings {
   Strings._();

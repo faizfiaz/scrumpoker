@@ -2,10 +2,10 @@
 
 import 'dart:convert';
 
-import 'package:SuperNinja/domain/models/error/error_dynamic.dart';
-import 'package:SuperNinja/domain/models/error/error_message.dart';
-import 'package:SuperNinja/domain/repositories/base_repository.dart';
-import 'package:SuperNinja/ui/widgets/multilanguage.dart';
+import 'package:scrumpoker/domain/models/error/error_dynamic.dart';
+import 'package:scrumpoker/domain/models/error/error_message.dart';
+import 'package:scrumpoker/domain/repositories/base_repository.dart';
+import 'package:scrumpoker/ui/widgets/multilanguage.dart';
 
 abstract class BaseUsecase<R extends BaseRepository?> {
   R repository;

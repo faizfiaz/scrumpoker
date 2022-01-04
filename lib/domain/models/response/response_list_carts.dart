@@ -1,4 +1,4 @@
-import 'package:SuperNinja/domain/models/entity/cart.dart';
+import 'package:scrumpoker/domain/models/entity/cart.dart';
 
 class ResponseListCarts {
   Cart? data;

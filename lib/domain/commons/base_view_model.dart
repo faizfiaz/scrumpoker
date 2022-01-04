@@ -1,7 +1,7 @@
-import 'package:SuperNinja/data/remote/dio_client.dart';
-import 'package:SuperNinja/ui/widgets/multilanguage.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:scrumpoker/data/remote/dio_client.dart';
+import 'package:scrumpoker/ui/widgets/multilanguage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'base_navigator.dart';

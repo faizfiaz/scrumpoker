@@ -1,15 +1,15 @@
-import 'package:SuperNinja/data/remote/dio_client.dart';
-import 'package:SuperNinja/data/remote/endpoints/order_endpoints.dart';
-import 'package:SuperNinja/domain/models/entity/no_content.dart';
-import 'package:SuperNinja/domain/models/response/response_checkout.dart';
-import 'package:SuperNinja/domain/models/response/response_checkout_order.dart';
-import 'package:SuperNinja/domain/models/response/response_count_carts.dart';
-import 'package:SuperNinja/domain/models/response/response_count_order.dart';
-import 'package:SuperNinja/domain/models/response/response_detail_order.dart';
-import 'package:SuperNinja/domain/models/response/response_list_carts.dart';
-import 'package:SuperNinja/domain/models/response/response_list_order.dart';
-import 'package:SuperNinja/domain/models/response/response_list_payment.dart';
-import 'package:SuperNinja/domain/repositories/base_repository.dart';
+import 'package:scrumpoker/data/remote/dio_client.dart';
+import 'package:scrumpoker/data/remote/endpoints/order_endpoints.dart';
+import 'package:scrumpoker/domain/models/entity/no_content.dart';
+import 'package:scrumpoker/domain/models/response/response_checkout.dart';
+import 'package:scrumpoker/domain/models/response/response_checkout_order.dart';
+import 'package:scrumpoker/domain/models/response/response_count_carts.dart';
+import 'package:scrumpoker/domain/models/response/response_count_order.dart';
+import 'package:scrumpoker/domain/models/response/response_detail_order.dart';
+import 'package:scrumpoker/domain/models/response/response_list_carts.dart';
+import 'package:scrumpoker/domain/models/response/response_list_order.dart';
+import 'package:scrumpoker/domain/models/response/response_list_payment.dart';
+import 'package:scrumpoker/domain/repositories/base_repository.dart';
 
 class OrderRepository extends BaseRepository {
   OrderRepository(DioClient? dioClient) : super(dioClient);

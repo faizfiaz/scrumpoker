@@ -1,6 +1,6 @@
-import 'package:SuperNinja/domain/models/entity/city.dart';
-import 'package:SuperNinja/domain/models/entity/province.dart';
-import 'package:SuperNinja/domain/models/entity/user_cl.dart';
+import 'package:scrumpoker/domain/models/entity/city.dart';
+import 'package:scrumpoker/domain/models/entity/province.dart';
+import 'package:scrumpoker/domain/models/entity/user_cl.dart';
 
 import 'response_list_store.dart';
 

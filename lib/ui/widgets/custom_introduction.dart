@@ -5,11 +5,11 @@ library introduction_screen;
 import 'dart:async';
 import 'dart:math';
 
-import 'package:SuperNinja/ui/widgets/custom_intro_page.dart' as custom;
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/src/model/page_view_model.dart';
 import 'package:introduction_screen/src/ui/intro_button.dart';
+import 'package:scrumpoker/ui/widgets/custom_intro_page.dart' as custom;
 
 class IntroductionScreen extends StatefulWidget {
   /// All pages of the onboarding

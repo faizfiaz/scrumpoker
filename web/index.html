@@ -3,21 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="Scrum Poker Online.">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="SuperNinja">
+  <meta name="apple-mobile-web-app-title" content="Scrum Poker Online">
   <link rel="apple-touch-icon" href="/icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
 
-  <title>SuperNinja</title>
+  <title>Scrum Poker Online</title>
   <link rel="manifest" href="/manifest.json">
 </head>
 <body>
+<!-- This script installs service_worker.js to provide PWA functionality to
+     application. For more information, see:
+     https://developers.google.com/web/fundamentals/primers/service-workers -->
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-messaging.js"></script>
+<!-- Firebase Configuration -->
+<script>
+      var firebaseConfig = {
+    apiKey: "AIzaSyAKOgQ4oEZxSkoiIJQfcZQzbBWSAXFCP1I",
+    authDomain: "scrum-poker-2e3cc.firebaseapp.com",
+    projectId: "scrum-poker-2e3cc",
+    storageBucket: "scrum-poker-2e3cc.appspot.com",
+    messagingSenderId: "1025967001489",
+    appId: "1:1025967001489:web:ced1cd76da7f4087aa9430",
+    measurementId: "G-GSXC23ES1Z"
+  };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+</script>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->

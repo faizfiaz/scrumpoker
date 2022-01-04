@@ -1,10 +1,10 @@
-import 'package:SuperNinja/domain/models/entity/xendit_bank.dart';
-import 'package:SuperNinja/domain/models/error/error_message.dart';
-import 'package:SuperNinja/domain/models/response/response_list_city.dart';
-import 'package:SuperNinja/domain/models/response/response_list_community_leader.dart';
-import 'package:SuperNinja/domain/models/response/response_list_province.dart';
-import 'package:SuperNinja/domain/models/response/response_list_store.dart';
-import 'package:SuperNinja/domain/repositories/commons_repository.dart';
+import 'package:scrumpoker/domain/models/entity/xendit_bank.dart';
+import 'package:scrumpoker/domain/models/error/error_message.dart';
+import 'package:scrumpoker/domain/models/response/response_list_city.dart';
+import 'package:scrumpoker/domain/models/response/response_list_community_leader.dart';
+import 'package:scrumpoker/domain/models/response/response_list_province.dart';
+import 'package:scrumpoker/domain/models/response/response_list_store.dart';
+import 'package:scrumpoker/domain/repositories/commons_repository.dart';
 
 import '../base_usecase.dart';
 

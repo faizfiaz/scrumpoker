@@ -1,4 +1,4 @@
-import 'package:SuperNinja/domain/models/entity/community_leader.dart';
+import 'package:scrumpoker/domain/models/entity/community_leader.dart';
 
 class ResponseListCommunityLeader {
   Data? data;

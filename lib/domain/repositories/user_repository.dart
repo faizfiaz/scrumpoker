@@ -1,18 +1,18 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:SuperNinja/data/remote/dio_client.dart';
-import 'package:SuperNinja/data/remote/endpoints/user_endpoints.dart';
-import 'package:SuperNinja/domain/models/entity/no_content.dart';
-import 'package:SuperNinja/domain/models/response/response_count_notification.dart';
-import 'package:SuperNinja/domain/models/response/response_forgot_password_check.dart';
-import 'package:SuperNinja/domain/models/response/response_list_address.dart';
-import 'package:SuperNinja/domain/models/response/response_list_notification.dart';
-import 'package:SuperNinja/domain/models/response/response_login.dart';
-import 'package:SuperNinja/domain/models/response/response_profile.dart';
-import 'package:SuperNinja/domain/models/response/response_upload_file.dart';
-import 'package:SuperNinja/domain/models/response/response_version.dart';
 import 'package:dio/dio.dart';
+import 'package:scrumpoker/data/remote/dio_client.dart';
+import 'package:scrumpoker/data/remote/endpoints/user_endpoints.dart';
+import 'package:scrumpoker/domain/models/entity/no_content.dart';
+import 'package:scrumpoker/domain/models/response/response_count_notification.dart';
+import 'package:scrumpoker/domain/models/response/response_forgot_password_check.dart';
+import 'package:scrumpoker/domain/models/response/response_list_address.dart';
+import 'package:scrumpoker/domain/models/response/response_list_notification.dart';
+import 'package:scrumpoker/domain/models/response/response_login.dart';
+import 'package:scrumpoker/domain/models/response/response_profile.dart';
+import 'package:scrumpoker/domain/models/response/response_upload_file.dart';
+import 'package:scrumpoker/domain/models/response/response_version.dart';
 
 import 'base_repository.dart';
 

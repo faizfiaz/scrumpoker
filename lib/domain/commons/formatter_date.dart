@@ -1,6 +1,6 @@
-import 'package:SuperNinja/ui/widgets/multilanguage.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
+import 'package:scrumpoker/ui/widgets/multilanguage.dart';
 
 // ignore: avoid_classes_with_only_static_members
 class FormatterDate {

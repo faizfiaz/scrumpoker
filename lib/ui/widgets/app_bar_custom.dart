@@ -1,8 +1,8 @@
 // ignore_for_file: avoid_classes_with_only_static_members, deprecated_member_use
 
-import 'package:SuperNinja/constant/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
+import 'package:scrumpoker/constant/color.dart';
 
 class AppBarCustom {
   static Widget buildAppBar(BuildContext context, String title) {

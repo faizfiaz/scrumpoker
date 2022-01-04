@@ -1,11 +1,11 @@
-import 'package:SuperNinja/data/remote/dio_client.dart';
-import 'package:SuperNinja/data/remote/endpoints/product_endpoints.dart';
-import 'package:SuperNinja/domain/models/entity/no_content.dart';
-import 'package:SuperNinja/domain/models/response/response_detail_product.dart';
-import 'package:SuperNinja/domain/models/response/response_list_banners.dart';
-import 'package:SuperNinja/domain/models/response/response_list_category_product.dart';
-import 'package:SuperNinja/domain/models/response/response_list_product.dart';
-import 'package:SuperNinja/domain/repositories/base_repository.dart';
+import 'package:scrumpoker/data/remote/dio_client.dart';
+import 'package:scrumpoker/data/remote/endpoints/product_endpoints.dart';
+import 'package:scrumpoker/domain/models/entity/no_content.dart';
+import 'package:scrumpoker/domain/models/response/response_detail_product.dart';
+import 'package:scrumpoker/domain/models/response/response_list_banners.dart';
+import 'package:scrumpoker/domain/models/response/response_list_category_product.dart';
+import 'package:scrumpoker/domain/models/response/response_list_product.dart';
+import 'package:scrumpoker/domain/repositories/base_repository.dart';
 
 class ProductRepository extends BaseRepository {
   ProductRepository(DioClient? dioClient) : super(dioClient);

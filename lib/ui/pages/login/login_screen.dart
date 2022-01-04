@@ -1,25 +1,21 @@
-import 'package:SuperNinja/constant/color.dart';
-import 'package:SuperNinja/constant/images.dart';
-import 'package:SuperNinja/constant/strings.dart';
-import 'package:SuperNinja/data/remote/endpoints/endpoints.dart';
-import 'package:SuperNinja/domain/commons/base_state_widget.dart';
-import 'package:SuperNinja/domain/commons/nav_key.dart';
-import 'package:SuperNinja/domain/commons/screen_utils.dart';
-import 'package:SuperNinja/domain/models/error/error_message.dart';
-import 'package:SuperNinja/ui/pages/forgotPassword/forgot_password_screen.dart';
-import 'package:SuperNinja/ui/pages/home/home_screen.dart';
-import 'package:SuperNinja/ui/pages/login/login_navigator.dart';
-import 'package:SuperNinja/ui/pages/login/login_view_model.dart';
-import 'package:SuperNinja/ui/pages/register/register_screen.dart';
-import 'package:SuperNinja/ui/widgets/app_bar_custom.dart';
-import 'package:SuperNinja/ui/widgets/default_button.dart';
-import 'package:SuperNinja/ui/widgets/loading_indicator.dart';
-import 'package:SuperNinja/ui/widgets/multilanguage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_font_icons/flutter_font_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+import 'package:scrumpoker/constant/color.dart';
+import 'package:scrumpoker/constant/images.dart';
+import 'package:scrumpoker/constant/strings.dart';
+import 'package:scrumpoker/domain/commons/base_state_widget.dart';
+import 'package:scrumpoker/domain/commons/nav_key.dart';
+import 'package:scrumpoker/domain/commons/screen_utils.dart';
+import 'package:scrumpoker/domain/models/error/error_message.dart';
+import 'package:scrumpoker/ui/pages/login/login_navigator.dart';
+import 'package:scrumpoker/ui/pages/login/login_view_model.dart';
+import 'package:scrumpoker/ui/widgets/app_bar_custom.dart';
+import 'package:scrumpoker/ui/widgets/default_button.dart';
+import 'package:scrumpoker/ui/widgets/loading_indicator.dart';
+import 'package:scrumpoker/ui/widgets/multilanguage.dart';
 
 // ignore: must_be_immutable
 class LoginScreen extends StatefulWidget {
@@ -108,12 +104,12 @@ class _LoginScreen extends BaseStateWidget<LoginScreen>
   }
 
   void displayRegister() {
-    push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => RegisterScreen(
-                  registerVia: Endpoints.manualKey,
-                )));
+    // push(
+    //     context,
+    //     MaterialPageRoute(
+    //         builder: (context) => RegisterScreen(
+    //               registerVia: Endpoints.manualKey,
+    //             )));
   }
 
   @override
@@ -121,13 +117,13 @@ class _LoginScreen extends BaseStateWidget<LoginScreen>
     if (widget.backToPreviousPage) {
       Navigator.pop(context, true);
     } else {
-      Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(
-              builder: (context) => HomeScreen(
-                    0,
-                  )),
-          (r) => false);
+      // Navigator.pushAndRemoveUntil(
+      //     context,
+      //     MaterialPageRoute(
+      //         builder: (context) => HomeScreen(
+      //               0,
+      //             )),
+      //     (r) => false);
     }
   }
 
@@ -324,18 +320,18 @@ class _LoginScreen extends BaseStateWidget<LoginScreen>
   @override
   void showRegisterThirdParty(String? email, String? displayName,
       String? photoUrl, String registerVia) {
-    push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => RegisterScreen(
-                email: email,
-                displayName: displayName,
-                photoUrl: photoUrl,
-                registerVia: registerVia)));
+    // push(
+    //     context,
+    //     MaterialPageRoute(
+    //         builder: (context) => RegisterScreen(
+    //             email: email,
+    //             displayName: displayName,
+    //             photoUrl: photoUrl,
+    //             registerVia: registerVia)));
   }
 
   void displayForgotPassword() {
-    push(context,
-        MaterialPageRoute(builder: (context) => ForgotPasswordScreen()));
+    // push(context,
+    //     MaterialPageRoute(builder: (context) => ForgotPasswordScreen()));
   }
 }

@@ -1,40 +1,40 @@
-import 'package:SuperNinja/data/sharedpreference/user_preferences.dart';
-import 'package:SuperNinja/domain/commons/nav_key.dart';
-import 'package:app_tracking_transparency/app_tracking_transparency.dart';
+import 'dart:async';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
-import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:sentry_flutter/sentry_flutter.dart';
-import 'package:smartech_flutter_plugin/smartech_plugin.dart';
+import 'package:scrumpoker/routes.dart';
 
 import 'constant/color.dart';
-import 'routes.dart';
+import 'data/sharedpreference/user_preferences.dart';
+import 'domain/commons/nav_key.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
-  await getPEMKeyCert();
-  await AppTrackingTransparency.requestTrackingAuthorization();
   await Firebase.initializeApp();
-  await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
-  await SentryFlutter.init(
-    (options) {
-      options.dsn = dotenv.env['SENTRY_URL'];
-    },
-    appRunner: () => runApp(MyApp()),
-  );
+
+  if ((defaultTargetPlatform == TargetPlatform.iOS) ||
+      (defaultTargetPlatform == TargetPlatform.android)) {
+    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  } else {
+    NavKey.isRunningWeb = true;
+  }
+
+  // await getPEMKeyCert();
+  runApp(Container(
+      color: NavKey.isRunningWeb ? primaryTrans : Colors.white,
+      child: Center(child: SizedBox(width:NavKey.isRunningWeb ? NavKey.widthWeb : double.infinity,child: MyApp()))));
 }
 
-Future<void> getPEMKeyCert() async {
-  final data = await rootBundle.loadString("assets/certs/certificate.pem");
-  NavKey.pemKey = data;
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  print("Handling a background message: ${message.messageId}");
 }
+
 
 class MyApp extends StatefulWidget {
   @override
@@ -43,14 +43,16 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   static final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-      FlutterLocalNotificationsPlugin();
+  FlutterLocalNotificationsPlugin();
 
   @override
   void initState() {
     super.initState();
 
-    initLocalNotification();
-    initFirebase();
+    if (!NavKey.isRunningWeb) {
+      initializeFlutterLocalNotification();
+      initializeFirebase();
+    }
   }
 
   Future<dynamic> onSelectNotification(String? payload) async {
@@ -66,46 +68,37 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    var startRoute = "/";
+    if (NavKey.isRunningWeb) {
+      startRoute = "/login";
+    }
     return MaterialApp(
-      title: "Super Ninja",
+      title: "Scrum Poker",
       navigatorKey: NavKey.navKey,
-      localizationsDelegates: const [FormBuilderLocalizations.delegate],
       theme: ThemeData(
-        primaryColor: primary,
-        pageTransitionsTheme: const PageTransitionsTheme(builders: {
-          TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-          TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-        }),
-        fontFamily: "Poppins",
-        canvasColor: Colors.white,
-        focusColor: primary,
-        textSelectionTheme: const TextSelectionThemeData(
-          cursorColor: primary,
-          selectionColor: primary,
-          selectionHandleColor: primary,
-        ),
-        colorScheme: ThemeData().colorScheme.copyWith(
-              primary: primary,
-              secondary: primary,
-            ),
-      ),
-      initialRoute: "/",
+          primaryColor: primary,
+          pageTransitionsTheme: const PageTransitionsTheme(builders: {
+            TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+            TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+          }),
+          fontFamily: "NunitoSans",
+          canvasColor: Colors.white, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: accent)),
+      initialRoute: startRoute,
       routes: routes,
     );
   }
 
-  // ignore: unused_element
   static Future<void> _showNotification(
-    int notificationId,
-    String notificationTitle,
-    String notificationContent,
-    String payload, {
-    String channelId = '1234',
-    String channelTitle = 'Android Channel',
-    String channelDescription = 'Default Android Channel for notifications',
-    Priority notificationPriority = Priority.high,
-    Importance notificationImportance = Importance.max,
-  }) async {
+      int notificationId,
+      String? notificationTitle,
+      String? notificationContent,
+      String payload, {
+        String channelId = '1234',
+        String channelTitle = 'Android Channel',
+        String channelDescription = 'Default Android Channel for notifications',
+        Priority notificationPriority = Priority.high,
+        Importance notificationImportance = Importance.max,
+      }) async {
     final androidPlatformChannelSpecifics = AndroidNotificationDetails(
       channelId,
       channelTitle,
@@ -115,7 +108,7 @@ class _MyAppState extends State<MyApp> {
       priority: notificationPriority,
     );
     const iOSPlatformChannelSpecifics =
-        IOSNotificationDetails(presentSound: false);
+    IOSNotificationDetails(presentSound: false);
     final platformChannelSpecifics = NotificationDetails(
         android: androidPlatformChannelSpecifics,
         iOS: iOSPlatformChannelSpecifics);
@@ -128,57 +121,61 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  Future<void> initFirebase() async {
-    await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
-    await FirebaseMessaging.instance.requestPermission(provisional: true);
-    FirebaseMessaging.instance.onTokenRefresh.listen((token) {
-      if (token.isNotEmpty) {
-        UserPreferences().setFirebaseToken(token);
-      }
-    });
-    await FirebaseMessaging.instance.getToken().then((token) {
-      if (token != null) {
-        UserPreferences().setFirebaseToken(token);
-      }
-    });
-    FirebaseMessaging.onBackgroundMessage(onBackgroundMessageReceived);
-    FirebaseMessaging.onMessage.listen(onMessageReceived);
-  }
-
-  Future<void> onMessageReceived(RemoteMessage remoteMessage) async {
-    print(remoteMessage.data);
-    await _showNotification(
-      1,
-      remoteMessage.data['title'],
-      remoteMessage.data['message'],
-      "",
-    );
-    await SmartechPlugin()
-        .handlePushNotification(remoteMessage.data.toString());
-    return Future<void>.value();
-  }
-
-  Future<void> onBackgroundMessageReceived(RemoteMessage remoteMessage) async {
-    print(remoteMessage);
-    await _showNotification(
-      1,
-      remoteMessage.data['title'],
-      remoteMessage.data['message'],
-      "",
-    );
-    await SmartechPlugin()
-        .handlePushNotification(remoteMessage.data.toString());
-    return Future<void>.value();
-  }
-
-  void initLocalNotification() {
+  void initializeFlutterLocalNotification() {
     const initializationSettingsAndroid =
-        AndroidInitializationSettings('@mipmap/ic_launcher');
+    AndroidInitializationSettings('@mipmap/ic_launcher');
     const initializationSettingsIOS = IOSInitializationSettings();
     const initializationSettings = InitializationSettings(
         android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
 
     flutterLocalNotificationsPlugin.initialize(initializationSettings,
         onSelectNotification: onSelectNotification);
+  }
+
+  // Create a [AndroidNotificationChannel] for heads up notifications
+  AndroidNotificationChannel channel = const AndroidNotificationChannel(
+    'high_importance_channel', // id
+    'High Importance Notifications', // title
+    description: 'This channel is used for important notifications.', // description
+    importance: Importance.high,
+  );
+
+  static Future<dynamic> onBackgroundMessage(
+      Map<String, dynamic> message) async {
+    final jsonData = message["notification"];
+    unawaited(_showNotification(1234, jsonData["title"], jsonData["body"], ""));
+    return Future<void>.value();
+  }
+
+  Future<void> initializeFirebase() async {
+    // if (environment.env['CURRENT_ENV'] == "1") {
+    //Force Collect Crash if in Production
+    await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
+    // }
+    final _firebaseMessaging = FirebaseMessaging.instance;
+
+    FirebaseMessaging.onMessage.listen((message) {
+      print('Got a message whilst in the foreground!');
+      print('Message data: ${message.data}');
+      onBackgroundMessage(message.data);
+      if (message.notification != null) {
+        print('Message also contained a notification: ${message.notification}');
+      }
+    });
+
+    unawaited(_firebaseMessaging.getToken().then((value) {
+      if (value != null) {
+        UserPreferences().setFirebaseToken(value);
+      }
+    }));
+
+    await _firebaseMessaging.requestPermission(
+
+    );
+    await _firebaseMessaging.setForegroundNotificationPresentationOptions(
+      alert: true,
+      badge: true,
+      sound: true,
+    );
   }
 }

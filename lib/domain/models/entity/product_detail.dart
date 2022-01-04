@@ -1,5 +1,5 @@
-import 'package:SuperNinja/domain/models/entity/product_images.dart';
-import 'package:SuperNinja/domain/models/entity/store_product.dart';
+import 'package:scrumpoker/domain/models/entity/product_images.dart';
+import 'package:scrumpoker/domain/models/entity/store_product.dart';
 
 import 'category.dart';
 

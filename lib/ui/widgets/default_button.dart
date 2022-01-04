@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_classes_with_only_static_members, deprecated_member_use
 
-import 'package:SuperNinja/constant/color.dart';
 import 'package:flutter/material.dart';
+import 'package:scrumpoker/constant/color.dart';
 
 class DefaultButton {
   static Widget redButton(

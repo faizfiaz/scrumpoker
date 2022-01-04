@@ -1,4 +1,4 @@
-import 'package:SuperNinja/domain/models/entity/province.dart';
+import 'package:scrumpoker/domain/models/entity/province.dart';
 
 class ResponseListProvince {
   List<Province>? data;

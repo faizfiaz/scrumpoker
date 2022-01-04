@@ -1,5 +1,5 @@
-import 'package:SuperNinja/constant/color.dart';
 import 'package:flutter/material.dart';
+import 'package:scrumpoker/constant/color.dart';
 
 class StrokePrice extends CustomPainter {
   @override

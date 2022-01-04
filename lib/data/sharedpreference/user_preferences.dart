@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:SuperNinja/domain/models/response/response_profile.dart';
 import 'package:encrypt/encrypt.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:scrumpoker/domain/models/response/response_profile.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserPreferences {

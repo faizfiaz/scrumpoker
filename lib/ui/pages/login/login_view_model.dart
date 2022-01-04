@@ -3,20 +3,16 @@
 import 'dart:convert';
 import 'dart:developer';
 
-import 'package:SuperNinja/data/remote/endpoints/endpoints.dart';
-import 'package:SuperNinja/domain/commons/base_view_model.dart';
-import 'package:SuperNinja/domain/commons/email_validator.dart';
-import 'package:SuperNinja/domain/commons/tracking_utils.dart';
-import 'package:SuperNinja/domain/models/entity/facebook_data.dart';
-import 'package:SuperNinja/domain/repositories/user_repository.dart';
-import 'package:SuperNinja/domain/usecases/user/user_usecase.dart';
-import 'package:SuperNinja/ui/pages/login/login_navigator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 // import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart' as http;
-import 'package:smartech_flutter_plugin/smartech_plugin.dart';
+import 'package:scrumpoker/data/remote/endpoints/endpoints.dart';
+import 'package:scrumpoker/domain/commons/base_view_model.dart';
+import 'package:scrumpoker/domain/commons/email_validator.dart';
+import 'package:scrumpoker/domain/models/entity/facebook_data.dart';
+import 'package:scrumpoker/ui/pages/login/login_navigator.dart';
 
 class LoginViewModel extends BaseViewModel<LoginNavigator> {
   TextEditingController controllerEmail = TextEditingController();
@@ -25,14 +21,14 @@ class LoginViewModel extends BaseViewModel<LoginNavigator> {
   bool errorEmail = false;
   bool errorPassword = false;
 
-  late UserUsecase _usecase;
+  // late UserUsecase _usecase;
 
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   GoogleSignInAccount? _currentUser;
   FacebookData? data;
 
   LoginViewModel() {
-    _usecase = UserUsecase(UserRepository(dioClient));
+    // _usecase = UserUsecase(UserRepository(dioClient));
     controllerEmail.addListener(checkValidEmail);
     controllerPassword.addListener(checkLengthPassword);
 
@@ -59,20 +55,18 @@ class LoginViewModel extends BaseViewModel<LoginNavigator> {
   }
 
   Future<void> doLogin() async {
-    showLoading(true);
-    await _usecase
-        .login(controllerEmail.text.toLowerCase(), controllerPassword.text)
-        .then((value) {
-      showLoading(false);
-      if (value.values.first != null) {
-        getView()!.showError(
-            value.values.first!.errors, value.values.first!.httpCode);
-      } else {
-        SmartechPlugin().trackEvent(
-            TrackingUtils.SIGNIN_OTP, TrackingUtils.getEmptyPayload());
-        getView()!.showMainPage();
-      }
-    }).catchError(print);
+    // showLoading(true);
+    // await _usecase
+    //     .login(controllerEmail.text.toLowerCase(), controllerPassword.text)
+    //     .then((value) {
+    //   showLoading(false);
+    //   if (value.values.first != null) {
+    //     getView()!.showError(
+    //         value.values.first!.errors, value.values.first!.httpCode);
+    //   } else {
+    //     getView()!.showMainPage();
+    //   }
+    // }).catchError(print);
   }
 
   Future<void> handleSignInGoogle() async {
@@ -86,34 +80,29 @@ class LoginViewModel extends BaseViewModel<LoginNavigator> {
 
   Future<void> doLoginThirdParty(
       String? email, String? token, String type) async {
-    showLoading(true);
-    notifyListeners();
-    await _usecase
-        .loginSocial(email: email, token: token, type: type)
-        .then((value) {
-      showLoading(false);
-      if (value.values.first != null) {
-        if (type == Endpoints.googleKey) {
-          getView()!.showRegisterThirdParty(
-              _currentUser!.email,
-              _currentUser!.displayName,
-              _currentUser!.photoUrl,
-              Endpoints.googleKey);
-        } else {
-          getView()!.showRegisterThirdParty(data!.email, data!.name,
-              data!.picture!.data!.url, Endpoints.facebookKey);
-        }
-      } else {
-        if (type == Endpoints.facebookKey) {
-          SmartechPlugin().trackEvent(
-              TrackingUtils.SIGNIN_FACEBOOK, TrackingUtils.getEmptyPayload());
-        } else {
-          SmartechPlugin().trackEvent(
-              TrackingUtils.SIGNIN_GOOGLE, TrackingUtils.getEmptyPayload());
-        }
-        getView()!.showMainPage();
-      }
-    }).catchError(print);
+    // showLoading(true);
+    // await _usecase
+    //     .loginSocial(email: email, token: token, type: type)
+    //     .then((value) {
+    //   showLoading(false);
+    //   if (value.values.first != null) {
+    //     if (type == Endpoints.googleKey) {
+    //       getView()!.showRegisterThirdParty(
+    //           _currentUser!.email,
+    //           _currentUser!.displayName,
+    //           _currentUser!.photoUrl,
+    //           Endpoints.googleKey);
+    //     } else {
+    //       getView()!.showRegisterThirdParty(data!.email, data!.name,
+    //           data!.picture!.data!.url, Endpoints.facebookKey);
+    //     }
+    //   } else {
+    //     if (type == Endpoints.facebookKey) {
+    //     } else {
+    //     }
+    //     getView()!.showMainPage();
+    //   }
+    // }).catchError(print);
   }
 
   Future<void> handleSignInFacebook() async {

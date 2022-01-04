@@ -1,4 +1,4 @@
-import 'package:SuperNinja/domain/models/entity/product.dart';
+import 'package:scrumpoker/domain/models/entity/product.dart';
 
 class ResponseListProduct {
   Paging? data;

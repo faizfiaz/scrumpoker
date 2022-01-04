@@ -1,4 +1,4 @@
-import 'package:SuperNinja/domain/models/error/error_message.dart';
+import 'package:scrumpoker/domain/models/error/error_message.dart';
 
 abstract class BaseNavigator {
   // ignore: avoid_positional_boolean_parameters

@@ -1,15 +1,14 @@
 import 'dart:developer';
 
-import 'package:SuperNinja/data/remote/endpoints/endpoints.dart';
-import 'package:SuperNinja/data/sharedpreference/user_preferences.dart';
-import 'package:SuperNinja/domain/commons/nav_key.dart';
-import 'package:SuperNinja/domain/commons/other_utils.dart';
-import 'package:SuperNinja/domain/commons/screen_utils.dart';
-import 'package:SuperNinja/ui/widgets/multilanguage.dart';
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:encrypt/encrypt.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:scrumpoker/data/remote/endpoints/endpoints.dart';
+import 'package:scrumpoker/data/sharedpreference/user_preferences.dart';
+import 'package:scrumpoker/domain/commons/nav_key.dart';
+import 'package:scrumpoker/domain/commons/other_utils.dart';
+import 'package:scrumpoker/ui/widgets/multilanguage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class DioClient {
@@ -52,7 +51,7 @@ class DioClient {
       OtherUtils.printWrapped(
           e.response?.data.toString() ?? e.response.toString());
       if (e.response.toString().toLowerCase().contains("expired")) {
-        ScreenUtils.expiredToken();
+        // ScreenUtils.expiredToken();
       }
       rethrow;
     }
@@ -92,7 +91,7 @@ class DioClient {
       OtherUtils.printWrapped(
           e.response?.data.toString() ?? e.response.toString());
       if (e.response.toString().toLowerCase().contains("expired")) {
-        ScreenUtils.expiredToken();
+        // ScreenUtils.expiredToken();
       }
       rethrow;
     }
@@ -129,7 +128,7 @@ class DioClient {
       OtherUtils.printWrapped(
           e.response?.data.toString() ?? e.response.toString());
       if (e.response.toString().toLowerCase().contains("expired")) {
-        ScreenUtils.expiredToken();
+        // ScreenUtils.expiredToken();
       }
       rethrow;
     }
@@ -174,7 +173,7 @@ class DioClient {
       OtherUtils.printWrapped(
           e.response?.data.toString() ?? e.response.toString());
       if (e.response.toString().toLowerCase().contains("expired")) {
-        ScreenUtils.expiredToken();
+        // ScreenUtils.expiredToken();
       }
       rethrow;
     }
@@ -218,7 +217,7 @@ class DioClient {
       OtherUtils.printWrapped(
           e.response?.data.toString() ?? e.response.toString());
       if (e.response.toString().toLowerCase().contains("expired")) {
-        ScreenUtils.expiredToken();
+        // ScreenUtils.expiredToken();
       }
       rethrow;
     }

@@ -1,4 +1,4 @@
-import 'package:SuperNinja/domain/models/entity/notifications.dart';
+import 'package:scrumpoker/domain/models/entity/notifications.dart';
 
 class ResponseListNotification {
   DataNotification? data;

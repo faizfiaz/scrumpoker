@@ -1,4 +1,4 @@
-import 'package:SuperNinja/data/remote/endpoints/endpoints.dart';
+import 'package:scrumpoker/data/remote/endpoints/endpoints.dart';
 
 class ProductEndpoints {
   ProductEndpoints._();

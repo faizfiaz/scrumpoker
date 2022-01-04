@@ -1,4 +1,4 @@
-import 'package:SuperNinja/domain/models/entity/category.dart';
+import 'package:scrumpoker/domain/models/entity/category.dart';
 
 class ResponseListCategory {
   List<Category>? data;

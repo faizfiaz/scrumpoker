@@ -1,7 +1,7 @@
-import 'package:SuperNinja/ui/pages/login/login_screen.dart';
-import 'package:SuperNinja/ui/pages/splashscreen/splash_screen.dart';
+import 'package:scrumpoker/ui/pages/login/login_screen.dart';
 
 final routes = {
-  '/': (context) => SplashScreen(),
+  // '/': (context) => SplashScreen(),
+  // '/': (context) => SplashScreen(),
   '/login': (context) => LoginScreen(),
 };

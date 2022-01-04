@@ -1,10 +1,10 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:SuperNinja/constant/images.dart';
-import 'package:SuperNinja/ui/widgets/multilanguage.dart';
 import 'package:flutter/material.dart';
 import 'package:loadmore/loadmore.dart';
+import 'package:scrumpoker/constant/images.dart';
+import 'package:scrumpoker/ui/widgets/multilanguage.dart';
 
 // ignore: avoid_classes_with_only_static_members
 class OtherUtils {
